@@ -24,19 +24,23 @@
     
     <v-navigation-drawer  v-model="drawer" app class="indogo xyz" color="#2496FF" width="80px"> 
      <v-app-bar-nav-icon @click="drawer =! drawer" color="white" class="navicon mx-4 my-4"> </v-app-bar-nav-icon>
-    <v-list class="list" >
+    <v-list class="list" dense  >
         <v-list-title>
+          
+           
+            <v-list-title-action  >
+                
+                <v-img src="../assets/homeicon.svg" style="margin-bottom:12px"></v-img>            
+            </v-list-title-action>   
+            
             <v-list-title-action>
-                <v-img src="../assets/homeicon.svg"></v-img>            
-            </v-list-title-action>     
-            <v-list-title-action>
-                <v-img src="../assets/settings.svg"></v-img>            
+                <v-img src="../assets/settings.svg" style="margin-bottom:12px"></v-img>            
             </v-list-title-action>   
             <v-list-title-action>
-                <v-img src="../assets/user.svg"></v-img>            
+                <v-img src="../assets/user.svg" style="margin-bottom:12px"></v-img>            
             </v-list-title-action> 
              <v-list-title-action>
-                <v-img src="../assets/phone.svg"></v-img>            
+                <v-img src="../assets/phone.svg" style="margin-bottom:12px"></v-img>            
             </v-list-title-action>   
         </v-list-title>    
     </v-list>

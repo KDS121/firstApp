@@ -1,5 +1,7 @@
 <template>
 <div class="cards" > 
+    <v-container fluid>
+    <v-row  no-gutters>
     <v-col cols="6" sm="4" v-for="item in items" :key="item.pname">
     <v-hover
         v-slot:default="{ hover }"
@@ -14,7 +16,7 @@
        >
     <v-img
       height="250"
-      src="{{item.img}}"
+      v-bind:src="item.img"
     ></v-img>
 
     <v-card-title>{{item.pname}}</v-card-title>
@@ -56,7 +58,7 @@
       color="#3389C2"
       text-color="white">react</v-chip>
 
-        <v-chip color="#3389C2" text-color="white">{{item.tags}}</v-chip>
+       <v-chip color="#3389C2" text-color="white" v-for="tag in item.tags" :key="tag">{{tag}}</v-chip>
 
       </v-chip-group>
     </v-card-text>
@@ -74,6 +76,8 @@
   </v-card>
        </v-hover>
     </v-col>
+    </v-row>
+    </v-container>
 </div>
 </template>
 <script>
@@ -106,7 +110,7 @@ export default {
                  tags: ["javascript", "css","html"] 
                  }
                 ,{
-                    img: 'https://cdn.vuetifyjs.com/images/cards/cooking.png' , 
+                 img: 'https://cdn.vuetifyjs.com/images/cards/cooking.png' , 
                  pname: 'Project Title',
                  rating: 4, 
                  numberOfPeopleRated: 143,
@@ -114,7 +118,7 @@ export default {
                  tags: ["javascript", "css","html"]
                 }
                 ,{
-                    img: 'https://cdn.vuetifyjs.com/images/cards/cooking.png' , 
+                 img: 'https://cdn.vuetifyjs.com/images/cards/cooking.png' , 
                  pname: 'Project Title',
                  rating: 4, 
                  numberOfPeopleRated: 143,
