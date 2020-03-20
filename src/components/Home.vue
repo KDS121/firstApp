@@ -24,7 +24,7 @@
     
     <v-navigation-drawer  v-model="drawer" app class="indogo xyz" color="#2496FF" width="80px"> 
      <v-app-bar-nav-icon @click="drawer =! drawer" color="white" class="navicon mx-4 my-4"> </v-app-bar-nav-icon>
-    <v-list class="list" dense  >
+    <!-- <v-list class="list" dense  >
         <v-list-title>
           
            
@@ -43,7 +43,19 @@
                 <v-img src="../assets/phone.svg" style="margin-bottom:12px"></v-img>            
             </v-list-title-action>   
         </v-list-title>    
-    </v-list>
+    </v-list> -->
+     <v-list  class="list">
+        <v-list-item-group v-model="item" color="primary">
+          <v-list-item
+            v-for="(item, i) in items"
+            :key="i"
+          >
+            <v-list-item-icon>
+              <v-icon medium color="white" light v-text="item.icon" class=icons ></v-icon>
+            </v-list-item-icon>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
     </v-navigation-drawer>
   </nav>
 </template>
@@ -52,7 +64,13 @@
 export default{
     data(){
         return{
-            drawer: false
+            drawer: false,
+            item: 1,
+    items: [
+      { icon: 'mdi-home' },
+      {icon: 'mdi-account' },
+      { icon: 'mdi-cogs' },
+    ],
         }
     }
 }
@@ -84,7 +102,13 @@ border-radius: 11px;
  top: 4px;
 }
 .list{
-    width: 70%;
-    margin: 6px;
+}
+.icons{
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    /* text-shadow:2px 2px 5px grey; */
+}
+.v-icon:hover{
+ text-shadow:2px 2px 5px grey;
 }
 </style>
